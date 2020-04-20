@@ -23,7 +23,7 @@ describe App do
     it 'does not return Sinatra error page' do
       visit '/newteam'
 
-      click_button "Submit"
+      click_button id="Submit"
       expect(page).to_not have_text("Backtrace")
     end
 
@@ -31,7 +31,7 @@ describe App do
       visit '/newteam'
 
       fill_in(:name, :with => "A")
-      click_button "Submit"
+      click_button id="Submit"
       expect(page).to have_text("Team Name: A")
     end
 
@@ -39,7 +39,7 @@ describe App do
       visit '/newteam'
 
       fill_in(:coach, :with => "B")
-      click_button "Submit"
+      click_button id="Submit"
 
       expect(page).to have_text("Coach: B")
     end
@@ -48,7 +48,7 @@ describe App do
       visit '/newteam'
 
       fill_in(:pg, :with => "C")
-      click_button "Submit"
+      click_button id="Submit"
 
       expect(page).to have_text("Point Guard: C")
     end
@@ -57,7 +57,7 @@ describe App do
       visit '/newteam'
 
       fill_in(:sg, :with => "D")
-      click_button "Submit"
+      click_button id="Submit"
 
       expect(page).to have_text("Shooting Guard: D")
     end
@@ -66,7 +66,7 @@ describe App do
       visit '/newteam'
 
       fill_in(:pf, :with => "E")
-      click_button "Submit"
+      click_button id="Submit"
 
       expect(page).to have_text("Power Forward: E")
     end
@@ -74,18 +74,18 @@ describe App do
     it "displays the small forward's name in the browser" do
       visit '/newteam'
 
-      fill_in(:sg, :with => "F")
-      click_button "Submit"
+      fill_in(:sg, :with => "Z")
+      click_button id="Submit"
 
 
-      expect(page).to have_text("Small Forward: F")
+      expect(page).to have_text("Small Forward: Z")
     end
 
     it "displays the center's name in the browser" do
       visit '/newteam'
 
       fill_in(:c, :with => "G")
-      click_button "Submit"
+      click_button id="Submit"
 
       expect(page).to have_text("Center: G")
     end
