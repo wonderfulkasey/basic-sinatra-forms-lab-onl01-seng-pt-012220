@@ -74,7 +74,7 @@ describe App do
     it "displays the small forward's name in the browser" do
       visit '/newteam'
 
-      fill_in(:sg, :with => "Z")
+      fill_in(:sf, :with => "Z")
       click_button id="Submit"
 
 
